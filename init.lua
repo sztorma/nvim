@@ -17,5 +17,6 @@ require('lazy').setup({
     require 'plugins.lualine',
     require 'plugins.treesitter',
     require 'plugins.telescope',
-    require 'plugins.lsp'
+    require 'plugins.lsp',
+    require 'plugins.autocompletion'
 })
