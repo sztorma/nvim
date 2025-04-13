@@ -11,4 +11,8 @@ return {
 		-- GitHub integration for vim-fugitive
 		"tpope/vim-rhubarb",
 	},
+	{
+		-- Hints keybinds
+		"folke/which-key.nvim",
+	},
 }
