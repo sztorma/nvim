@@ -1,5 +1,6 @@
 require 'core.options'
 require 'core.keymaps'
+require 'core.diagnostics'
 
 -- Declare the path where layz will clone plugin code
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
