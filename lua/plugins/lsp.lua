@@ -42,7 +42,7 @@ return {
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
             -- setup the lua language server
-            lspconfig.lua_ls.setup({
+            vim.lsp.config("lua_ls", {
                 capabilities = capabilities,
                 settings = {
                     Lua = {
@@ -51,7 +51,7 @@ return {
                         }
                     }
                 }
-           })
+            })
 
             -- setup the typescript language server
             lspconfig.ts_ls.setup({
