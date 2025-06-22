@@ -1,4 +1,4 @@
-local jdtls = require 'config/jdtls'
+local jdtls_config = require 'config/jdtls_config'
 
 local config = {
   -- The command that starts the language server
@@ -39,7 +39,7 @@ local config = {
 
     -- 💀
     -- See `data directory configuration` section in the README
-    '-data', jdtls.get_workspace()
+    '-data', jdtls_config.get_workspace()
   },
 
   -- 💀
