@@ -1,15 +1,4 @@
-local function get_workspace()
-    -- Get the home directory of your operating system
-    local home = os.getenv "HOME"
-    -- Declare a directory where you would like to store project information
-    -- TODO: find out a proper path
-    local workspace_path = home .. "/code/workspace/"
-    -- Determine the project name
-    local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
-    -- Create the workspace directory by concatenating the designated workspace path and the project name
-    local workspace_dir = workspace_path .. project_name
-    return workspace_dir
-end
+local util = require 'config/util'
 
 local config = {
   -- The command that starts the language server
@@ -50,7 +39,7 @@ local config = {
 
     -- 💀
     -- See `data directory configuration` section in the README
-    '-data', get_workspace()
+    '-data', util.get_workspace()
   },
 
   -- 💀
