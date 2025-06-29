@@ -66,8 +66,11 @@ local config = {
   --
   -- If you don't plan on using the debugger or other eclipse.jdt.ls plugins you can remove this
   init_options = {
-    bundles = {}
+    bundles = {
+      jdtls_config.get_java_debugger()
+    }
   },
+  on_attach = jdtls_config.on_attach
 }
 -- This starts a new client & server,
 -- or attaches to an existing client & server depending on the `root_dir`.
