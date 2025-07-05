@@ -66,9 +66,7 @@ local config = {
   --
   -- If you don't plan on using the debugger or other eclipse.jdt.ls plugins you can remove this
   init_options = {
-    bundles = {
-      jdtls_config.get_java_debugger()
-    }
+    bundles = jdtls_config.get_bundles()
   },
   on_attach = jdtls_config.on_attach
 }

@@ -17,6 +17,22 @@ function M.get_java_debugger()
     return vim.fn.glob(os.getenv("HOME") .. "/.local/share/nvim/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar", 1)
 end
 
+-- TODO: eliminate literal
+function M.get_java_test_jars()
+    local java_test_jars = {}
+    vim.list_extend(java_test_jars, vim.split(
+       vim.fn.glob(os.getenv("HOME") .. "/.local/share/nvim/mason/packages/java-test/extension/server/*.jar", 1), "\n")
+    )
+    return java_test_jars
+end
+
+function M.get_bundles()
+    local bundles = {
+        M.get_java_debugger()
+    }
+    return vim.list_extend(bundles, M.get_java_test_jars())
+end
+
 function M.java_keymaps()
     -- Allow yourself to run JdtCompile as a Vim command
     vim.cmd("command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_compile JdtCompile lua require('jdtls').compile(<f-args>)")
