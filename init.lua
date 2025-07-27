@@ -38,5 +38,6 @@ require('lazy').setup({
     require 'plugins.alpha',
     require 'plugins.indent-blankline',
     require 'plugins.misc',
-    require 'plugins.nvim_dap'
+    require 'plugins.nvim_dap',
+    require 'plugins.springboot-nvim'
 })
